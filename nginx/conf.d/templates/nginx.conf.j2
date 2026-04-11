@@ -50,12 +50,14 @@ http {
     server {
         listen 80 default_server;
         listen [::]:80 default_server;
+        root /web;
 
         server_name {{ SERVER_HOSTNAME }} {{ ADDITIONAL_SERVER_NAMES | join(' ') }};
 
         if ( $request_uri ~* "%0A|%0D" ) { return 403; }
         location ^~ /.well-known/acme-challenge/ {
-            root /var/www/certbot;
+            allow all;
+            default_type "text/plain";
         }
 
         location / {
