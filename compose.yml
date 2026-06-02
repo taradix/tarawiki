@@ -81,7 +81,7 @@ services:
     restart: "no"
 
   mysql:
-    image: mariadb:12.2
+    image: mariadb:12.3
     volumes:
       - ./mysql/conf.d/:/etc/mysql/conf.d/:ro,Z
       - mysql-vol-1:/var/lib/mysql/
