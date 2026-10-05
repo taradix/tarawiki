@@ -1,4 +1,4 @@
-FROM mediawiki:1.46.0-fpm-alpine
+FROM mediawiki:1.46.2-fpm-alpine
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
