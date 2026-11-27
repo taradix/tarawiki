@@ -133,8 +133,6 @@ services:
       - certbot-www:/web:ro
       - certbot-certs:/etc/letsencrypt:ro
       - ./mediawiki/assets:/var/www/html/assets:ro
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/includes/:/etc/nginx/includes/:ro
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
     ports:
       - '${HTTP_BIND:-}:${HTTP_PORT:-80}:80'
